@@ -83,9 +83,9 @@ class Dog
    WHERE name = ? AND breed = ?
    LIMIT 1 
    SQL
-   dog = DB[:conn].execute(sql, name, breed)
+   dog = DB[:conn].execute(sql, name, breed).first 
    
-   if dog 
+   if !dog.empty?
      new_dog = self.new_from_db
    else 
      new_dog = self.create({:name => name, :breed => breed})
