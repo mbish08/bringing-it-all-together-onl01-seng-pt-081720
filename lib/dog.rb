@@ -83,7 +83,8 @@ class Dog
    SQL
    DB[:conn].execute(sql, name, breed).first 
    
-   if 
+   if dog 
+     self.new_from_db
  end 
   
   
